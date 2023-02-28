@@ -1,0 +1,92 @@
+@import "./constants";
+
+.info {
+  @extend %font;
+  @extend %flex-center;
+  gap: 30px;
+  margin-bottom: 133px;
+  flex-wrap: wrap;
+}
+
+.info__card {
+  max-width: 540px;
+  width: 100%;
+  max-height: 212px;
+  background-color: $leadBackgroundColor;
+  color: $backgroundColor;
+  padding: 35px 40px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.info__card_subscribe {
+  background-image: url(../images/Group.svg);
+  background-size: 140px;
+  background-position: right 45px top 52px;
+}
+
+.info__card_our-info {
+  background-image: url(../images/x36\ \ 8.svg);
+  background-size: 178px;
+  background-position: right 45px top 64px;
+}
+
+.info__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.info__text {
+  width: 245px;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 25px 0;
+}
+
+.info__input {
+  width: 225px;
+  height: 35px;
+  border: none;
+  border-radius: 30px;
+  padding: 9px 25px;
+  color: $mainTextColor;
+  font-size: 14px;
+
+  &::placeholder {
+    color: $placeholderColor;
+  }
+
+}
+
+.info__button {
+  border: solid 2px $backgroundColor;
+  background-color: $leadBackgroundColor;
+  color: $backgroundColor;
+  padding: 9px 28px;
+}
+
+@media (max-width: 500px) {
+
+  .info__card_subscribe {
+    background-position: left 50% bottom 25px;
+  }
+  
+  .info__card_our-info {
+    background-position: left 50% bottom 35px;
+  }
+
+  .info__card {
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 350px;
+    padding: 35px 0;
+  }
+
+  .info__text {
+    text-align: center;
+  }
+
+}

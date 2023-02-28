@@ -1,0 +1,71 @@
+@import "./constants";
+
+.special {
+  @extend %flex-center;
+  flex-direction: column;
+  margin: 80px auto 100px;
+  max-width: 1110px;
+  @extend %font;
+}
+
+.special__title {
+  align-self: self-start;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 38px;
+}
+
+.special__cards {
+  width: 100%;
+  @extend %flex-center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.special__card {
+  @extend %flex-center;
+  flex-direction: column;
+  padding: 25px 30px;
+  background-color: $backgroundColor;
+  row-gap: 30px;
+}
+
+.special__card-img {
+  width: 125px;
+}
+
+.special__card-text {
+  width: 195px;
+  font-size: 14px;
+  font-weight: 1.4;
+  text-align: center;
+}
+
+.special__card-prise {
+  font-weight: 500;
+  font-size: 21px;
+}
+
+.special__button {
+  width: 130px;
+  border-radius: 40px;
+  padding: 9px 40px;
+  border: solid 2px $leadBackgroundColor;
+  background-color: $leadBackgroundColor;
+  color: $backgroundColor;
+  font-size: 14px;
+}
+
+@media (max-width: 1110px) {
+
+  .special__title {
+    align-self: center;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .special__title {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,61 @@
+@import "./constants";
+
+.page {
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: $font;
+  font-size: 14px;
+  background-color: $mainBackgroundColor;
+  color: $mainTextColor;
+}
+
+.lock {
+  overflow: auto;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.contacts {
+  width: 340px;
+  font-size: 16px;
+  @extend %font;
+  color: $mainTextColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.button {
+  width: 170px;
+  border-radius: 40px;
+  padding: 12px 27px;
+}
+
+.contacts__button {
+  border: solid 2px $leadBackgroundColor;
+  background-color: $backgroundColor;
+}
+
+@media (max-width: 767px) {
+
+  main {
+    padding-top: 120px;
+  }
+
+  .lock {
+    overflow: hidden;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  main {
+    padding-top: 90px;
+  }
+
+}

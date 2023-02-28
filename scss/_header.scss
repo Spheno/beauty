@@ -1,0 +1,237 @@
+@import "./constants";
+
+.header {
+  @extend %flex-center;
+  background-color: $backgroundColor;
+  position: relative;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1920px;
+  min-width: 320px;
+  width: 100%;
+}
+
+.header__nav-about {
+  column-gap: 30px;
+  min-height: 50px;
+  @extend %font;
+  font-size: 14px;
+  color: $headerTextColor;
+  padding: 17px 0 16px;
+  @extend %flex-center;
+  background-color: $mainBackgroundColor;
+  @extend %max-min-width;
+}
+
+.header__nav-shop {
+  column-gap: 40px;
+  min-height: 80px;
+  font-size: 16px;
+  @extend %font;
+  color: $mainTextColor;
+  background-color: $backgroundColor;
+  padding: 30px 0;
+  @extend %flex-center;
+  border-top: 1px solid $mainBackgroundColor;
+  grid-row: 3/4;
+  @extend %max-min-width;
+}
+
+.header__logo {
+  box-sizing: border-box;
+  background-color: $backgroundColor;
+  @extend %flex-space-between;
+  max-width: 1115px;
+  width: 100%;
+  height: 120px;
+  justify-self: center;
+}
+
+.header__logo-container {
+  @extend %flex-space-between;
+  min-width: 260px;
+}
+
+.header__logo-img {
+  width: 80px;
+  margin: 20px;
+}
+
+.header__title {
+  font-size: 36px;
+  font-weight: 700;
+  @extend %font;
+  color: $leadBackgroundColor;
+  text-transform: uppercase;
+}
+
+.header__mob {
+  display: none;
+}
+
+@media (max-width: 767px) {
+
+  .header {
+    min-height: 50px;
+    position: fixed;
+    right: 0;
+    left: 0;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .header__mob {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header__menu {
+    z-index: 5;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 40px;
+    margin-right: 20px;
+  }
+
+  .header__menu-span,
+  .header__menu::after,
+  .header__menu::before {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    background-color: $leadBackgroundColor;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header__menu::after,
+  .header__menu::before {
+    content: "";
+  }
+
+  .header__menu::after {
+    bottom: 0;
+  }
+
+  .header__menu::before {
+    top: 0;
+  }
+
+  .header__menu-span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+
+  .header__nav {
+    position: fixed;
+    right: -100%;
+    top: 120px;
+    height: 100%;
+    background-color: $leadBackgroundColor;
+    padding: 30px 30px 30px 50px;
+    transition: 1s ease 0s;
+    display: grid;
+    grid-template-rows: repeat(3, minmax(min-content, max-content));
+    grid-template-columns: 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 20px;
+    width: 300px;
+    overflow: auto;
+    overflow-y: scroll;
+    padding: 10px 0;
+   
+  }
+
+  .active {
+    right: 0;
+    transition: 0.5s ease 0s;
+  }
+
+  .header__nav-about,
+  .header__logo,
+  .header__tel,
+  .header__nav-shop {
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: $leadBackgroundColor;
+    font-size: 16px;
+    width: 160px;
+    padding: 20px 0;
+    justify-content: flex-start;
+    
+  }
+
+  .header__nav-about {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  .header__nav-shop {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    border-bottom: 1px solid $mainBackgroundColor;
+  }
+
+  .header__tel {
+    flex-direction: column; 
+    min-height: 300px;
+  }
+
+  .header__logo {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    padding: 0;
+  }
+
+  .header__menu-span_active {
+    transform: scale(0) translate(0px, -50%);
+  }
+
+  .header__menu_active::before {
+    top: 45%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+
+  .header__menu_active::after {
+    bottom: 45%;
+    transform: rotate(45deg) translate(0px, -50%);
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .header__logo-img {
+    width: 50px;
+  }
+
+  .header__nav {
+    top: 90px;
+  }
+
+  .header__title {
+    font-size: 26px;
+  }
+
+  .header__logo-container {
+    min-width: 160px;
+  }
+
+  .header__menu {
+    width: 30px;
+    height: 20px;
+  }
+
+}
