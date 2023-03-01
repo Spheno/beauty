@@ -72,6 +72,24 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../vendor/fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../vendor/fonts/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../vendor/fonts/Roboto-Bold.ttf") format("truetype");
+}
 .footer__down, .footer__social-network-link, .footer, .info, .special__card, .special__cards, .special, .lead__img-container, .lead, .header__nav-shop, .header__nav-about, .header {
   display: -webkit-box;
   display: -ms-flexbox;
